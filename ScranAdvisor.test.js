@@ -71,7 +71,7 @@ describe('ScranAdvisor', () => {
           expect(actual).toEqual(expected);
     })
 
-    test.skip('can find all restaurants from Glasgow', () => {
+    test('can find all restaurants from Glasgow', () => {
         const expected = [
             {
               id: 1,
@@ -118,14 +118,16 @@ describe('ScranAdvisor', () => {
               longitude: -4.255168672861043
             }
           ];
-          const actual = null;
+          const actual = scranAdvisor.findAllRestaurantsInGlasgow();
           expect(actual).toEqual(expected);
     })
 
     // Extensions
 
     test.skip('can find the most common cuisine type', () => {
-
+      const expected = "most common cuisine"
+      const actual = scranAdvisor.mostCommonCuisineType(restaurants);
+      expect(actual).toEqual(expected);
     })
 
     test.skip('can find restaurant with substring', () => {

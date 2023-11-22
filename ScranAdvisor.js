@@ -12,10 +12,15 @@ ScranAdvisor.prototype.findRestaurantByName = function(nameOfRestaurant) {
     return this.restaurants.find(arrayObj => arrayObj.name === nameOfRestaurant);
 };
 
-ScranAdvisor.prototype.newArrayOfRestaurants = function(names) {
-    return this.restaurants.map(names.name);
+ScranAdvisor.prototype.newArrayOfRestaurants = function() {
+    return this.restaurants.map(restaurant => restaurant.name);
 };
 
-// ScranAdvisor.prototype.findAllRestaurantNames = this.restaurants.map((callback) => callback());
+ScranAdvisor.prototype.findAllRestaurantsInGlasgow = function() {
+    return this.restaurants.filter((arrayObj) => arrayObj.location.town === "Glasgow");
+};
 
+// ScranAdvisor.prototype.mostCommonCuisineType = function(array) {
+//     return array.filter((cuisine) => (cuisine === this.restaurants.cuisine)).length;
+// }
 module.exports = ScranAdvisor;
